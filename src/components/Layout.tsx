@@ -1,16 +1,13 @@
-import Footer from "./Footer"
-export default function Layout({children}: {children: React.ReactNode}) {
+import Navbar from "./Navbar"
+export default function Layout({ children }: { children: React.ReactNode }) {
     return (
-         <main className="grid grid-cols-[auto_1fr] min-h-screen ml-3">
-      {/* 1ª columna → Espacio reservado para el Navbar */}
-      <div></div>
+        <>
 
-      {/* 2ª columna → Contenido principal */}
-      <div >
-        {children}
-      </div>
-            <Footer />
-        </main>
+            <main className="flex flex-col min-h-screen">
+                <Navbar />
+                <div className="flex-1 ml-[300px]">{children}</div>
+            </main>
+
+        </>
     )
-
 }
