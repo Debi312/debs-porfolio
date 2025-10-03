@@ -1,34 +1,38 @@
 import { useState, useEffect } from "react";
 import { projects } from "../data/projects";
 import ReactMarkdown from "react-markdown";
+import { VscGithub } from "react-icons/vsc";
+
+// import { GoVideo } from "react-icons/go";
 
 
 export default function Projects() {
     return (
         <section
             id="projects"
-            className="relative min-h-screen flex flex-col items-center justify-center text-center py-20"
+            className="flex flex-col justify-between gap-20 text-center  mt-20 "
         >
-            <div className="w-full h-[350px] bg-coral" />
+            <h1 className="text-5xl md:text-6xl font-bold mb-4">Proyectos</h1>
 
-            <div className="relative z-10 w-full px-4 max-w-5xl mx-auto -mt-60">
-                <h2 className="text-4xl font-bold mb-6 text-navy">Proyectos destacados</h2>
-
-                <p className="text-lg max-w-xl mb-8 mx-auto text-navy">
-                    Aquí verás algunos de los proyectos en los que he trabajado recientemente.
-                </p>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 mx-auto">
-                    {projects.map((project, id) => (
-                        <ProjectCard key={id} project={project} />
-                    ))}
-                </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 ">
+                {projects.map((project, id) => (
+                    <ProjectCard key={id} project={project} />
+                ))}
             </div>
         </section>
-    );
+    )
 }
 
-function ProjectCard({ project }: { project: any }) {
+type Project = {
+    title: string;
+    description: string;
+    video?: string;
+    images: string[];
+    stack?: string[];
+    github?: string;
+
+}
+function ProjectCard({ project }: { project: Project }) {
     const [currentImage, setCurrentImage] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
 
@@ -39,8 +43,8 @@ function ProjectCard({ project }: { project: any }) {
             setCurrentImage((prev) => (prev + 1) % project.images.length);
         }, 1800);
 
-        return () => clearInterval(interval);
-    }, [isHovered, project.images?.length]);
+        return () => clearInterval(interval)
+    }, [isHovered, project.images?.length])
 
     return (
         <div
@@ -49,10 +53,12 @@ function ProjectCard({ project }: { project: any }) {
                 setIsHovered(false);
                 setCurrentImage(0);
             }}
-            className="group relative flex flex-col justify-between bg-perl p-6  text-left min-h-[400px] overflow-hidden"
+            className="group relative flex flex-col justify-between bg-perl p-10 text-left  min-h-[500px] overflow-hidden rounded-2xl"
         >
-            {/* Carrusel en slide horizontal */}
-            <div className="absolute inset-0 w-full h-full overflow-hidden scale-110  z-0">
+
+
+            {/* Carrusel */}
+            <div className="absolute inset-0 w-full h-full overflow-hidden scale-90 z-0">
                 <div
                     className="flex h-full transition-transform duration-700 ease-in-out"
                     style={{
@@ -64,7 +70,7 @@ function ProjectCard({ project }: { project: any }) {
                             <img
                                 src={img}
                                 alt={`${project.title} ${index}`}
-                                className="w-full h-full object-cover "
+                                className="w-full h-full object-cover"
                             />
                         </div>
                     ))}
@@ -72,18 +78,17 @@ function ProjectCard({ project }: { project: any }) {
             </div>
 
             {/* Capa oscura */}
-            <div className="absolute inset-0 bg-perl bg-opacity-40 z-10 transition-opacity duration-300 group-hover:opacity-0 " />
+            <div className="absolute inset-0 bg-perl bg-opacity-40 z-10 transition-opacity duration-300 group-hover:opacity-0" />
 
             {/* Contenido visible por defecto */}
-            <div className="relative z-20 transition-opacity duration-300 group-hover:opacity-0">
+            <div className="relative z-20 transition-opacity duration-300 group-hover:opacity-0 justify-between ">
                 <section className="flex flex-row justify-between items-start">
                     <h2 className="text-3xl font-bold mb-6 text-navy">{project.title}</h2>
                 </section>
 
-                <div className="text-lg font-extralight text-justify text-navy">
+                <div className="text-xl leading-relaxed font-extralight text-justify text-navy mb-4">
                     <ReactMarkdown
                         components={{
-                            // Evita que Markdown meta <p> con márgenes raros
                             p: ({ children }) => <span>{children}</span>,
                             strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
                             a: ({ href, children }) => (
@@ -95,7 +100,8 @@ function ProjectCard({ project }: { project: any }) {
                     >
                         {project.description}
                     </ReactMarkdown>
-                </div>            </div>
+                </div>
+            </div>
 
             {/* Stack */}
             {project.stack && (
@@ -104,7 +110,7 @@ function ProjectCard({ project }: { project: any }) {
                         {project.stack.map((tech: string, index: number) => (
                             <span
                                 key={index}
-                                className="inline-block bg-coral bg-opacity-70 p-2 rounded-full text-xs font-semibold mr-2 text-navy"
+                                className="inline-block bg-coral bg-opacity-70 p-2 rounded-full text-md mr-2 text-navy"
                             >
                                 {tech}
                             </span>
@@ -112,6 +118,36 @@ function ProjectCard({ project }: { project: any }) {
                     </div>
                 </div>
             )}
+
+            {/* Action buttons */}
+            <div className="absolute top-4 left-4 z-30 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {project.github && (
+
+                    <a
+                        href={project.github}
+                        target="_blank"
+                        className="relative group cursor-pointer"
+                    >
+                        <VscGithub className="text-5xl hover:text-lavender transition-colors duration-300 bg-perl rounded-full "
+                        />
+                    </a>
+
+
+
+                )}
+
+                {/* {project.video && (
+                    <button
+                        onClick={() => {
+                            // Aquí podrías abrir un modal o reproducir video
+                            console.log("Abrir video:", project.video);
+                        }}
+                    >
+                        <GoVideo className="text-3xl hover:text-lavender transition-colors duration-300 bg-perl "
+                        />
+                    </button>
+                )} */}
+            </div>
         </div>
-    );
+    )
 }
