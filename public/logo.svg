@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="212" height="212" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title>Letra D lavanda</title>
+  <!-- Fondo transparente -->
+  <rect width="100%" height="100%" fill="none"/>
+  <!-- Letra -->
+  <text x="50%" y="50%"
+        text-anchor="middle"
+        dominant-baseline="central"
+        fill="#cdc5ea"
+        font-family="Poppins, Montserrat, Inter, Arial, sans-serif"
+        font-size="420"
+        font-weight="800">
+    D
+  </text>
+</svg>
