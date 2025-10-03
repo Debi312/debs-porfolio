@@ -18,7 +18,8 @@
   --color-softblack: #2a2a2a;
   --color-perl:rgb(255, 253, 249); */
 
-  --font-sans: 'Inter', sans-serif;
+  --font-sans: 'Inter', sans-serif, courier, monospace;
+  --font-courier: 'Courier New', Courier, monospace;
 }
 @layer base {
   html {
@@ -33,6 +34,10 @@
     @apply font-bold text-navy;
   }
 }
+html, body {
+  overflow-x: hidden;
+}
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

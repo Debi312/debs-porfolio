@@ -12,24 +12,29 @@ import { SiGit } from "react-icons/si";
 import { FaFigma } from "react-icons/fa6";
 import { SiCanva } from "react-icons/si";
 export default function Technologies() {
+
+    const techStyles = "text-4xl hover:text-lavender"
     return (
-        <section id="technologies" className="flex flex-col items-center justify-center text-center">
-            <h1 className="text-3xl font-bold ">Technologies</h1>
-            <div className="flex flex-wrap justify-center items-center gap-4 mt-6 text-2xl">
-              
-                <BsFiletypeHtml />
-                <BsFiletypeCss />
-                <SiMongodb />
-                <SiExpress />
-                <FaReact />
-                <FaNodeJs />
-                <SiTypescript />
-                <RiTailwindCssFill />
-                <SiNextdotjs />
-                <VscGithub />
-                <SiGit />
-                <FaFigma />
-                <SiCanva />
+        <section id="technologies" className="flex flex-col items-center justify-center mt-20 mb-20"
+        >
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 mt-8">
+                Tecnologías
+            </h1>
+            <div className="flex flex-wrap justify-center items-center gap-4 mt-6 ">
+
+                <BsFiletypeHtml className={techStyles} />
+                <BsFiletypeCss className={techStyles} />
+                <SiMongodb className={techStyles} />
+                <SiExpress className={techStyles} />
+                <FaReact className={techStyles} />
+                <FaNodeJs className={techStyles} />
+                <SiTypescript className={techStyles} />
+                <RiTailwindCssFill className={techStyles} />
+                <SiNextdotjs className={techStyles} />
+                <VscGithub className={techStyles} />
+                <SiGit className={techStyles} />
+                <FaFigma className={techStyles} />
+                <SiCanva className={techStyles} />
             </div>
         </section>
     )
