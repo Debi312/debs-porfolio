@@ -17,9 +17,9 @@ export default function Technologies() {
     return (
         <section id="technologies" className="flex flex-col items-center justify-center mt-20 mb-20"
         >
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 mt-8">
+            <h2 className=" font-bold mb-4 mt-8">
                 Tecnologías
-            </h1>
+            </h2>
             <div className="flex flex-wrap justify-center items-center gap-4 mt-6 ">
 
                 <BsFiletypeHtml className={techStyles} />

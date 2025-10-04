@@ -6,12 +6,12 @@ import { PiHouse, PiBracketsAngle, PiUser } from "react-icons/pi";
 import { MdOutlineLayers } from "react-icons/md";
 
 const links = [
-    { href: "#home", label: "Inicio", icon: <PiHouse className="text-2xl mr-2" /> },
-    { href: "#projects", label: "Proyectos", icon: <PiBracketsAngle className="text-2xl mr-2" /> },
-    { href: "#about", label: "Sobre mí", icon: <PiUser className="text-2xl mr-2" /> },
-    { href: "#technologies", label: "Tecnologías", icon: <MdOutlineLayers className="text-2xl mr-2" /> },
+    { href: "#home", label: "Inicio", icon: <PiHouse className="text-xl mr-2" /> },
+    { href: "#projects", label: "Proyectos", icon: <PiBracketsAngle className="text-1xl mr-2" /> },
+    { href: "#about", label: "Sobre mí", icon: <PiUser className="text-1xl mr-2" /> },
+    { href: "#technologies", label: "Tecnologías", icon: <MdOutlineLayers className="text-1xl mr-2" /> },
 ]
-const iconClass = "text-4xl lg:hover:text-lavender transition-colors duration-300";
+const iconClass = "lg:text-3xl md:text-2xl lg:hover:text-lavender transition-colors duration-300";
 
 export default function Navbar() {
     const [active, setActive] = useState("#home");
@@ -24,7 +24,7 @@ export default function Navbar() {
             </div>
             <div className="w-full lg:w-auto">
 
-                <ul className="flex flex-row justify-around w-full lg:flex-col lg:space-y-6 lg:space-x-0 text-navy text-xl ">
+                <ul className="flex flex-row justify-around w-full lg:flex-col lg:space-y-6 lg:space-x-0 text-navy lg:text-lg md:text-lg text-sm ">
                     {links.map((link) => (
                         <li key={link.href}>
                             <a
@@ -51,7 +51,7 @@ export default function Navbar() {
                     href="https://www.linkedin.com/in/debora-garcia-escudero/"
                     target="_blank"
                     className="bg-lavender text-white p-3 rounded-full  hover:text-lavender hover:bg-white 
-                   lg:bg-transparent lg:hover:bg-transparent lg:text-navy lg:text-3xl  lg:p-0"
+                   lg:bg-transparent lg:hover:bg-transparent lg:text-navy lg:text-3xl  lg:p-0 "
                 >
                     <SiLinkedin className={iconClass} />
                 </a>

@@ -17,12 +17,12 @@ export default function Header() {
         "
       />
 
-      <h1 className="text-6xl lg:text-7xl font-bold mb-14">
+      <h1 className="mb-14">
         Hola, soy <span className="text-lavender">Débora</span>
       </h1>
-      <p className="font-courier text-navy font-[500] text-2xl ">
+      <h4 className="font-courier text-navy font-[500] text-xl lg:text-2xl ">
         &lt; Diseño y desarrollo productos digitales funcionales, accesibles e intuitivos /&gt;
-      </p>
+      </h4>
     </section>
   )
 }

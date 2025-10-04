@@ -1,15 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-
-   --color-perl: rgb(249, 244, 239);
+  --color-perl: rgb(249, 244, 239);
   --color-coral: #fde9dc;
   --color-lavender: #cfc5ed;
   --color-navy: #4e5764;
   --color-lightblue: #dce9ec;
   --color-softblack: #2a2a2a;
-  --color-base:rgb(255, 252, 247);
-/*   
+  --color-base: rgb(255, 252, 247);
+  /*   
   --color-base: rgb(236, 234, 232);
   --color-coral: #fde9dc;
   --color-lavender: #cfc5ed;
@@ -18,8 +17,8 @@
   --color-softblack: #2a2a2a;
   --color-perl:rgb(255, 253, 249); */
 
-  --font-sans: 'Inter', sans-serif, courier, monospace;
-  --font-courier: 'Courier New', Courier, monospace;
+  --font-sans: "Inter", sans-serif, courier, monospace;
+  --font-courier: "Courier New", Courier, monospace;
 }
 @layer base {
   html {
@@ -30,11 +29,27 @@
     @apply bg-base text-navy font-sans;
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     @apply font-bold text-navy;
   }
+  h1 {
+    @apply text-3xl lg:text-5xl md:text-5xl;
+  }
+  h2 {
+    @apply text-2xl lg:text-4xl md:text-4xl;
+  }
+  h3 {
+    @apply text-xl lg:text-3xl md:text-3xl;
+  }
+
+  p {
+    @apply lg:text-xl sm:text-lg ;
+  }
 }
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 

@@ -4,11 +4,11 @@ export default function AboutMe() {
             id="about"
             className=" flex flex-col items-center justify-center gap-20 mt-20 "
         >
-            <h1 className="text-5xl md:text-6xl font-bold mb-4">
+            <h2 className="font-bold mb-4">
                 Sobre <span className="text-lavender">mi</span>
-            </h1>
+            </h2>
 
-            <p className="text-xl font-light leading-8">
+            <p className=" font-light leading-8">
                 Soy <b>desarrolladora frontend</b> con pasión por crear <b>experiencias digitales cuidadas al detalle</b>. Trabajo principalmente con el stack <b>MERN</b> (MongoDB, Express, React y Node.js), y disfruto especialmente de la parte
                 creativa: <b>transformar un diseño en una interfaz precisa y funcional</b>, replicando hasta el último píxel.
                 <br />

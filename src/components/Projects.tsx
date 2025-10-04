@@ -12,13 +12,13 @@ export default function Projects() {
             id="projects"
             className="flex flex-col justify-between gap-20 text-center  mt-20 "
         >
-            <h1 className="text-5xl md:text-6xl font-bold mb-4">Proyectos</h1>
+            <h2 className="font-bold mb-4">Proyectos</h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 ">
-                {projects.map((project, id) => (
-                    <ProjectCard key={id} project={project} />
-                ))}
-            </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 ">
+                    {projects.map((project, id) => (
+                        <ProjectCard key={id} project={project} />
+                    ))}
+                </div>
         </section>
     )
 }
@@ -83,13 +83,13 @@ function ProjectCard({ project }: { project: Project }) {
             {/* Contenido visible por defecto */}
             <div className="relative z-20 transition-opacity duration-300 group-hover:opacity-0 justify-between ">
                 <section className="flex flex-row justify-between items-start">
-                    <h2 className="text-3xl font-bold mb-6 text-navy">{project.title}</h2>
+                    <h3 className="font-bold mb-6 text-navy">{project.title}</h3>
                 </section>
 
-                <div className="text-xl leading-relaxed font-extralight text-justify text-navy mb-4">
+                <div className=" leading-relaxed font-extralight text-justify text-navy mb-4">
                     <ReactMarkdown
                         components={{
-                            p: ({ children }) => <span>{children}</span>,
+                            p: ({ children }) => <p><span>{children}</span></p>,
                             strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
                             a: ({ href, children }) => (
                                 <a href={href} target="_blank" rel="noopener noreferrer" className="underline">
