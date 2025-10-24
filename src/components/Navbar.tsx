@@ -20,11 +20,11 @@ export default function Navbar() {
         <nav className="w-full fixed lg:w-[300px] bg-base dark:bg-card-dark lg:min-h-screen lg:fixed lg:border-r lg:border-gray-200  p-4 lg:py-12 flex flex-col lg:justify-between items-center shadow-lg shadow-neutral-300 z-50 ">
             <div className="hidden lg:flex lg:justify-between lg:items-center lg:space-x-4 lg:flex-col lg:text-center">
 
-                <img src="/images/foto_perfil2.jpeg" alt="logo" className="w-55 h-55 mx-auto bg-[#cfc5ed] rounded-full" />
+                <img src="/images/foto_perfil2.jpeg" alt="logo" className="w-50 h-50 mx-auto bg-[#cfc5ed] rounded-full" />
             </div>
             <div className="w-full lg:w-auto">
 
-                <ul className="flex flex-row justify-around w-full lg:flex-col lg:space-y-6 lg:space-x-0 text-navy lg:text-lg md:text-lg text-sm ">
+                <ul className="flex flex-row justify-evenly w-full lg:flex-col lg:space-y-3 lg:space-x-0 text-navy lg:text-[16px] md:text-[16px] text-sm ">
                     {links.map((link) => (
                         <li key={link.href}>
                             <a
@@ -58,7 +58,7 @@ export default function Navbar() {
                 <a
                     href="DeboraGarcia_CV.pdf"
                     target="_blank"
-                    download={"DeboraGarcia_CV.pdf"}
+                    download={"Debora_Garcia_CV_2025e.pdf"}
                     className="bg-lavender text-white p-3 rounded-full  hover:text-lavender hover:bg-white 
                    lg:bg-transparent lg:hover:bg-transparent lg:text-navy lg:text-3xl  lg:p-0"
                 >
