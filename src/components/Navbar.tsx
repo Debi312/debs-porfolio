@@ -56,7 +56,7 @@ export default function Navbar() {
                     <SiLinkedin className={iconClass} />
                 </a>
                 <a
-                    href="DeboraGarcia_CV.pdf"
+                    href="Debora_Garcia_CV_2025e.pdf"
                     target="_blank"
                     download={"Debora_Garcia_CV_2025e.pdf"}
                     className="bg-lavender text-white p-3 rounded-full  hover:text-lavender hover:bg-white 
