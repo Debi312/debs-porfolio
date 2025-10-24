@@ -8,14 +8,6 @@
   --color-lightblue: #dce9ec;
   --color-softblack: #2a2a2a;
   --color-base: rgb(255, 252, 247);
-  /*   
-  --color-base: rgb(236, 234, 232);
-  --color-coral: #fde9dc;
-  --color-lavender: #cfc5ed;
-  --color-navy: #1f2a3b;
-  --color-lightblue: #dce9ec;
-  --color-softblack: #2a2a2a;
-  --color-perl:rgb(255, 253, 249); */
 
   --font-sans: "Inter", sans-serif, courier, monospace;
   --font-courier: "Courier New", Courier, monospace;
@@ -35,50 +27,24 @@
     @apply font-bold text-navy;
   }
   h1 {
-    @apply text-3xl lg:text-5xl md:text-5xl;
+    /* reducido 2px: 3xl (30px) -> 28px ; 5xl (48px) -> 46px */
+    @apply text-[28px] lg:text-[46px] md:text-[46px];
   }
   h2 {
-    @apply text-2xl lg:text-4xl md:text-4xl;
+    /* reducido 2px: 2xl (24px) -> 22px ; 4xl (36px) -> 34px */
+    @apply text-[22px] lg:text-[34px] md:text-[34px];
   }
   h3 {
-    @apply text-xl lg:text-3xl md:text-3xl;
+    /* reducido 2px: xl (20px) -> 18px ; 3xl (30px) -> 28px */
+    @apply text-[18px] lg:text-[28px] md:text-[28px];
   }
 
   p {
-    @apply lg:text-xl sm:text-lg ;
+    /* reducido 2px: lg:text-xl (20px) -> 18px ; sm:text-lg (18px) -> 16px */
+    @apply lg:text-[18px] sm:text-[16px];
   }
 }
 html,
 body {
   overflow-x: hidden;
 }
-
-/* :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
- */

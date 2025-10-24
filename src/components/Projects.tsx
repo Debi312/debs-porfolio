@@ -14,11 +14,11 @@ export default function Projects() {
         >
             <h2 className="font-bold mb-4">Proyectos</h2>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 ">
-                    {projects.map((project, id) => (
-                        <ProjectCard key={id} project={project} />
-                    ))}
-                </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 ">
+                {projects.map((project, id) => (
+                    <ProjectCard key={id} project={project} />
+                ))}
+            </div>
         </section>
     )
 }
@@ -53,8 +53,12 @@ function ProjectCard({ project }: { project: Project }) {
                 setIsHovered(false);
                 setCurrentImage(0);
             }}
-            className="group relative flex flex-col justify-between bg-perl p-10 text-left  min-h-[500px] overflow-hidden rounded-2xl"
-        >
+            className="
+            group relative flex flex-col justify-between
+             bg-perl p-5 md:p-8 text-left min-h-[500px] overflow-hidden rounded-2xl
+            transition-transform duration-500 ease-out
+             hover:-translate-y-2 hover:scale-[1.01] 
+        ">
 
 
             {/* Carrusel */}
@@ -106,37 +110,39 @@ function ProjectCard({ project }: { project: Project }) {
             {/* Stack */}
             {project.stack && (
                 <div className="relative z-20 transition-opacity duration-300 group-hover:opacity-0">
-                    <div className="flex flex-row items-center justify-center flex-wrap gap-2">
-                        {project.stack.map((tech: string, index: number) => (
-                            <span
-                                key={index}
-                                className="inline-block bg-coral bg-opacity-70 p-2 rounded-full text-md mr-2 text-navy"
-                            >
-                                {tech}
-                            </span>
-                        ))}
+                    <div className="flex flex-wrap justify-center gap-2 items-center">
+                            {project.stack.map((tech, i) => (
+                                <span
+                                    key={i}
+                                    className="inline-block bg-coral bg-opacity-70 px-3 py-1 rounded-full text-md text-navy"
+                                >
+                                    {tech}
+                                </span>
+                            ))}
+                        </div>
+
                     </div>
-                </div>
             )}
 
-            {/* Action buttons */}
-            <div className="absolute top-4 left-4 z-30 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {project.github && (
 
-                    <a
-                        href={project.github}
-                        target="_blank"
-                        className="relative group cursor-pointer"
-                    >
-                        <VscGithub className="text-5xl hover:text-lavender transition-colors duration-300 bg-perl rounded-full "
-                        />
-                    </a>
+                    {/* Action buttons */}
+                    <div className="absolute top-4 left-4 z-30 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        {project.github && (
+
+                            <a
+                                href={project.github}
+                                target="_blank"
+                                className="relative group cursor-pointer"
+                            >
+                                <VscGithub className="text-5xl hover:text-lavender transition-colors duration-300 bg-perl rounded-full "
+                                />
+                            </a>
 
 
 
-                )}
+                        )}
 
-                {/* {project.video && (
+                        {/* {project.video && (
                     <button
                         onClick={() => {
                             // Aquí podrías abrir un modal o reproducir video
@@ -147,7 +153,7 @@ function ProjectCard({ project }: { project: Project }) {
                         />
                     </button>
                 )} */}
-            </div>
-        </div>
-    )
-}
+                    </div>
+                </div>
+            )
+            }
