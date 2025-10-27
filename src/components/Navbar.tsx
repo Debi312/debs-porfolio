@@ -29,7 +29,7 @@ export default function Navbar() {
                         <li key={link.href}>
                             <a
                                 href={link.href}
-                                
+
                                 onClick={() => setActive(link.href)}
                                 className={`flex flex-col items-center lg:flex-row lg:justify-start gap-1 lg:gap-3 py-2 px-3 lg:px-4 rounded-lg transition-colors duration-300
                                 hover:text-lavender
@@ -50,6 +50,8 @@ export default function Navbar() {
                 <a
                     href="https://www.linkedin.com/in/debora-garcia-escudero/"
                     target="_blank"
+                    aria-label="LinkedIn de Débora"
+
                     className="bg-lavender text-white p-3 rounded-full  hover:text-lavender hover:bg-white 
                    lg:bg-transparent lg:hover:bg-transparent lg:text-navy lg:text-3xl  lg:p-0 "
                 >
@@ -58,6 +60,7 @@ export default function Navbar() {
                 <a
                     href="Debora_Garcia_CV_2025e.pdf"
                     target="_blank"
+                    aria-label="Descargar CV de Débora"
                     download={"Debora_Garcia_CV_2025e.pdf"}
                     className="bg-lavender text-white p-3 rounded-full  hover:text-lavender hover:bg-white 
                    lg:bg-transparent lg:hover:bg-transparent lg:text-navy lg:text-3xl  lg:p-0"
@@ -67,6 +70,7 @@ export default function Navbar() {
                 <a
                     href="https://github.com/Debi312"
                     target="_blank"
+                    aria-label="GitHub de Débora"
                     className="bg-lavender text-white p-3 rounded-full  hover:text-lavender hover:bg-white 
                    lg:bg-transparent lg:hover:bg-transparent lg:text-navy lg:text-3xl lg:p-0"
                 >

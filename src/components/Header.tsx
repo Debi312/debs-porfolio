@@ -12,7 +12,7 @@ export default function Header() {
           pointer-events-none
           absolute top-0 left-1/2 -translate-x-1/2
           w-[100vw] h-full
-          bg-[url('/background_4.png')] bg-cover bg-center bg-no-repeat
+          bg-[url('/background_4.webp')] bg-cover bg-center bg-no-repeat
           -z-10
         "
       />
@@ -20,9 +20,9 @@ export default function Header() {
       <h1 className="mb-14">
         Hola, soy <span className="text-lavender">Débora</span>
       </h1>
-      <h4 className="font-courier text-navy font-[500] text-xl lg:text-2xl ">
+      <h2 className="font-courier text-navy font-[500] text-xl lg:text-2xl ">
         &lt; Diseño y desarrollo productos digitales funcionales, accesibles e intuitivos /&gt;
-      </h4>
+      </h2>
     </section>
   )
 }

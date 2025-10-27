@@ -3,8 +3,6 @@ import { projects } from "../data/projects";
 import ReactMarkdown from "react-markdown";
 import { VscGithub } from "react-icons/vsc";
 
-// import { GoVideo } from "react-icons/go";
-
 
 export default function Projects() {
     return (
@@ -111,38 +109,40 @@ function ProjectCard({ project }: { project: Project }) {
             {project.stack && (
                 <div className="relative z-20 transition-opacity duration-300 group-hover:opacity-0">
                     <div className="flex flex-wrap justify-center gap-2 items-center">
-                            {project.stack.map((tech, i) => (
-                                <span
-                                    key={i}
-                                    className="inline-block bg-coral bg-opacity-70 px-3 py-1 rounded-full text-md text-navy"
-                                >
-                                    {tech}
-                                </span>
-                            ))}
-                        </div>
-
+                        {project.stack.map((tech, i) => (
+                            <span
+                                key={i}
+                                className="inline-block bg-coral bg-opacity-70 px-3 py-1 rounded-full text-md text-navy"
+                            >
+                                {tech}
+                            </span>
+                        ))}
                     </div>
+
+                </div>
             )}
 
 
-                    {/* Action buttons */}
-                    <div className="absolute top-4 left-4 z-30 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        {project.github && (
+            {/* Action buttons */}
+            <div className="absolute top-4 left-4 z-30 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {project.github && (
 
-                            <a
-                                href={project.github}
-                                target="_blank"
-                                className="relative group cursor-pointer"
-                            >
-                                <VscGithub className="text-5xl hover:text-lavender transition-colors duration-300 bg-perl rounded-full "
-                                />
-                            </a>
+                    <a
+                        href={project.github}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        aria-label="Repositorio GitHub del proyecto"
+                        className="relative group cursor-pointer"
+                    >
+                        <VscGithub className="text-5xl hover:text-lavender transition-colors duration-300 bg-perl rounded-full "
+                        />
+                    </a>
 
 
 
-                        )}
+                )}
 
-                        {/* {project.video && (
+                {/* {project.video && (
                     <button
                         onClick={() => {
                             // Aquí podrías abrir un modal o reproducir video
@@ -153,7 +153,7 @@ function ProjectCard({ project }: { project: Project }) {
                         />
                     </button>
                 )} */}
-                    </div>
-                </div>
-            )
-            }
+            </div>
+        </div>
+    )
+}
